@@ -36,6 +36,7 @@ function move(key) {
 document.body.addEventListener('keydown', function(event) {
   const isMoveKey = !event.key.indexOf('Arrow');
   if(isMoveKey) move(event.key);
+  if(event.key === 'Escape') initPosition();
 });
 
 window.onload = initPosition;
