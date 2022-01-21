@@ -1,0 +1,47 @@
+@charset "UTF-8";
+h1 {
+    text-align: center;
+}
+table {
+    margin: 0 auto;
+}
+td {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+td:hover {
+    background-color: aqua;
+}
+
+#currentPosition {
+    background-color: red;
+}
+
+.painted {
+    background-color: pink;
+}
+
+.clear {
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.clear.hide {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
