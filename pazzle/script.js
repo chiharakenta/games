@@ -66,3 +66,17 @@ document.getElementById('retry').onclick = function() {
   unClear();
   initPosition();
 }
+const keys = document.getElementsByClassName('key');
+for (i in keys) {
+  keys[i].onclick = function() {
+    if (this.id === 'up') yAxis--;
+    if (this.id === 'down') yAxis++;
+    if (this.id === 'left') xAxis--;
+    if (this.id === 'right') xAxis++;
+    if(yAxis < 0) yAxis++;
+    if(xAxis < 0) xAxis++;
+    if(yAxis > 9) yAxis--;
+    if(xAxis > 9) xAxis--;
+    setPosition(yAxis, xAxis);
+  }
+}

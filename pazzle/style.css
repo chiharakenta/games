@@ -4,10 +4,18 @@ h1 {
 }
 table {
     margin: 0 auto;
+    width: 400px;
+    height: 400px;
+}
+@media screen and (max-width: 600px) {
+    table {
+        width: 300px;
+        height: 300px;
+    }
 }
 td {
-    width: 40px;
-    height: 40px;
+    width: 10%;
+    height: 10%;
     cursor: pointer;
 }
 
@@ -45,4 +53,63 @@ td {
 
 .text-center {
     text-align: center;
+}
+
+.controller {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 10px;
+    margin: 0 auto;
+    width: 400px;
+    font-size: 25px;
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+    .controller {
+        width: 300px;
+    }
+}
+.keys {
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+}
+.up {
+    margin-left: 40px;
+}
+.left, .right {
+    display: inline-block;
+}
+.right {
+    margin-left: 52px;
+}
+.down {
+    margin-left: 40px;
+}
+.up, .left, .right, .down {
+    text-shadow: 1px 1px 2px #808080;
+}
+.up:hover, .left:hover, .right:hover, .down:hover {
+    cursor: pointer;
+}
+.up:active {
+    text-shadow: 0px 0px 1px #808080;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+.right:active {
+    text-shadow: 0px 0px 1px #808080;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+.left:active {
+    text-shadow: 0px 0px 1px #808080;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+.down:active {
+    text-shadow: 0px 0px 1px #808080;
+    margin-right: -1px;
+    margin-bottom: -1px;
 }
