@@ -8,7 +8,7 @@
     <title>ゲーム</title>
 </head>
 <body>
-    <h1>矢印キーで移動するだけのゲーム</h1>
+    <h1>塗りつぶそう</h1>
     <table border="1">
         <tbody id="field">
             <tr>
@@ -134,9 +134,12 @@
         </tbody>
     </table>
     <div class="text-center">
-        <button id="reset">リセット</button>
+        <button id="reset" class="reset">リセット</button>
     </div>
-    <div id="clear" class="clear hide">クリア</div>
+    <div id="clear" class="clear hide">
+        <div>クリア</div>
+        <button id="retry">もう一度遊ぶ</button>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>

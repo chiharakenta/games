@@ -2,6 +2,25 @@ const field = document.getElementById('field');
 let yAxis;
 let xAxis;
 let currentPosition;
+let complete = false;
+
+function isClear() {
+  const grids = Array.from(document.querySelectorAll('td'));
+  const notPaintedGrids = grids.filter(grid => !grid.classList.contains('painted'));
+  return !notPaintedGrids.length;
+}
+
+function clear() {
+  const clearText = document.getElementById('clear');
+  clearText.classList.remove('hide');
+  complete = true;
+}
+
+function unClear() {
+  const clearText = document.getElementById('clear');
+  clearText.classList.add('hide');
+  complete = false;
+}
 
 function initPosition() {
   document.querySelectorAll('.painted').forEach(function(painted) {
@@ -19,6 +38,7 @@ function setPosition(yAxis, xAxis) {
   currentPosition = field.children[yAxis].children[xAxis];
   currentPosition.id = 'currentPosition';
   currentPosition.className = 'painted';
+  if(isClear()) clear();
 }
 
 function move(key) {
@@ -34,12 +54,15 @@ function move(key) {
 }
 
 document.body.addEventListener('keydown', function(event) {
+  if(complete) return;
   const isMoveKey = !event.key.indexOf('Arrow');
   if(isMoveKey) move(event.key);
   if(event.key === 'Escape') initPosition();
 });
 
 window.onload = initPosition;
-document.getElementById('reset').onclick = (function() {
+document.getElementById('reset').onclick = initPosition;
+document.getElementById('retry').onclick = function() {
+  unClear();
   initPosition();
-});
+}

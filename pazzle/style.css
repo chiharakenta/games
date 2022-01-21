@@ -10,9 +10,6 @@ td {
     height: 40px;
     cursor: pointer;
 }
-td:hover {
-    background-color: aqua;
-}
 
 #currentPosition {
     background-color: red;
@@ -23,6 +20,8 @@ td:hover {
 }
 
 .clear {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #FFFFFF;
     font-size: 100px;
     font-weight: bold;
     text-align: center;
@@ -34,10 +33,12 @@ td:hover {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 10;
 }
+
 .clear.hide {
     display: none;
 }
